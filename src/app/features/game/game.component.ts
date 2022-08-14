@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.scss']
+  styleUrls: ['./game.component.scss'],
 })
-export class GameComponent implements OnInit {
+export class GameComponent {
+  constructor(public authService: AuthenticationService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  logout() {
+    this.authService.logout();
   }
-
 }

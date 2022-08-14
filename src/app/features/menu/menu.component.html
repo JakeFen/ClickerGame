@@ -1,6 +1,46 @@
-<div>
-  <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
-  <button mat-flat-button color="primary">Primary</button>
-  <button mat-flat-button color="accent">Accent</button>
-  <button mat-flat-button color="warn">Accent</button>
+<div class="container">
+  <h1>Game Title</h1>
+
+  <div class="container__form">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="submitLogin()"
+      class="form"
+      autocomplete="off"
+    >
+      <label for="username">ACCOUNT</label>
+      <mat-form-field appearance="outline" class="form__input">
+        <input
+          matInput
+          placeholder="Enter your username"
+          formControlName="username"
+        />
+        <mat-error *ngIf="password?.errors?.['required']"
+          >Username required</mat-error
+        >
+      </mat-form-field>
+
+      <label for="password">PASSWORD</label>
+      <mat-form-field appearance="outline" class="form__input">
+        <input
+          matInput
+          placeholder="Enter your password"
+          formControlName="password"
+          type="password"
+        />
+        <mat-error *ngIf="password?.errors?.['required']"
+          >Password required</mat-error
+        >
+      </mat-form-field>
+
+      <!-- <div *ngIf="firebaseErrorMessage != ''" class="error-style">
+        <span>{{ firebaseErrorMessage }}</span>
+      </div> -->
+
+      <mat-checkbox color="primary"> Remember Account</mat-checkbox>
+
+      <button mat-flat-button color="primary" type="submit">SUBMIT</button>
+      <button mat-flat-button color="primary">FORGOT PASSWORD</button>
+    </form>
+  </div>
 </div>
