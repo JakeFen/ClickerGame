@@ -1,4 +1,42 @@
 <div>
-  <p>game works!</p>
-  <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+  <mat-toolbar>
+    <button mat-flat-button color="primary" (click)="logout()">Logout</button>
+  </mat-toolbar>
+
+  <mat-nav-list class="main-nav">
+    <p>Souls - 99999</p>
+    <p>COMBAT</p>
+    <button mat-list-item href="..." class="skill-button">
+      Level <span class="skill-level">1</span>
+    </button>
+
+    <p>CRAFTING</p>
+    <button mat-list-item href="..." class="skill-button">
+      Weaponsmithing <span class="skill-level">(1 / 50)</span>
+    </button>
+
+    <button mat-list-item href="..." class="skill-button">
+      Armoring <span class="skill-level">(1 / 50)</span>
+    </button>
+
+    <button mat-list-item href="..." class="skill-button">
+      Fletching <span class="skill-level">(1 / 50)</span>
+    </button>
+
+    <button mat-list-item href="..." class="skill-button">
+      Arcana <span class="skill-level">(1 / 50)</span>
+    </button>
+
+    <button mat-list-item href="..." class="skill-button">
+      Summoning <span class="skill-level">(1 / 50)</span>
+    </button>
+  </mat-nav-list>
+
+  <app-weaponsmithing
+    *ngIf="selectedSkill === 'weaponsmithing'"
+  ></app-weaponsmithing>
+  <app-fletching *ngIf="selectedSkill === 'fletching'"></app-fletching>
+  <app-armoring *ngIf="selectedSkill === 'armoring'"></app-armoring>
+  <app-arcana *ngIf="selectedSkill === 'arcana'"></app-arcana>
+  <app-summoning *ngIf="selectedSkill === 'summoning'"></app-summoning>
 </div>

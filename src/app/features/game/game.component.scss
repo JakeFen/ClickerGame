@@ -1,0 +1,16 @@
+.mat-nav-list {
+  width: 250px;
+}
+
+.mat-list-base .mat-list-item {
+  height: 40px;
+  font-size: 14px;
+}
+
+:host ::ng-deep .skill-button .mat-list-item-content {
+  justify-content: space-between !important;
+}
+
+:host ::ng-deep .mat-list-item-content .skill-level {
+     font-size: 12px;
+}
